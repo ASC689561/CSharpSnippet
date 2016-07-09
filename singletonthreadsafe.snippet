@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>singleton for threadsafe</Title>
+			<Shortcut>singletonthreadsafe</Shortcut>
+			<Description>singleton</Description>
+      <Author>NBH</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="false">
+					<ID>classname</ID>
+					<ToolTip>Class name</ToolTip>
+					<Default>ClassNamePlaceholder</Default>
+					<Function>ClassName()</Function>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+        <![CDATA[
+        #region Singleton
+        
+        private static $classname$ instance;
+        private static object syncLock = new object();
+        public static $classname$ Instance
+        {
+            get
+            {
+                if (instance == null)
+                    lock (syncLock)
+                    {
+                        if (instance == null)
+                            instance = new $classname$();
+                    }
+                return instance;
+            }
+        }
+   
+        #endregion  
+        
+        private $classname$()
+        {
+            $end$
+        }]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

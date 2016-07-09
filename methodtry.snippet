@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>methodtry</Title>
+			<Shortcut>methodtry</Shortcut>
+			<Description>tao phuong thuc</Description>
+			<Author>NBH</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+        
+				<Literal>
+					<ID>modify</ID>
+					<ToolTip>kiểu bảo vệ</ToolTip>
+					<Default>public</Default>
+				</Literal>     
+        
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>Tên Struct</ToolTip>
+					<Default>method</Default>
+				</Literal>
+        
+				<Literal>
+					<ID>type</ID>
+					<ToolTip>kieu tra ve</ToolTip>
+					<Default>void</Default>
+				</Literal>      
+        
+ 				<Literal>
+					<ID>param</ID>
+					<ToolTip>Tên tham so</ToolTip>
+					<Default> </Default>
+				</Literal>
+
+        <Literal Editable="false">
+          <ID>classname</ID>
+          <ToolTip>Class name</ToolTip>
+          <Function>ClassName()</Function>
+          <Default>ClassNamePlaceholder</Default>
+        </Literal>
+        
+			</Declarations>
+			<Code Language="csharp">
+        <![CDATA[$modify$ $type$ $name$($param$)
+	    {
+            try
+            {
+                $end$
+            }
+            catch (Exception er)
+            {
+                System.Windows.Forms.MessageBox.Show("$classname$.$name$  " + Environment.NewLine+ " Error:  " + er.Message,"",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                throw er;
+            }
+	    }]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

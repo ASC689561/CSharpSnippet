@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>singfromfile</Title>
+			<Shortcut>singfromfile</Shortcut>
+			<Description>singleton load from file</Description>
+			<Author>NBH</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+        
+				<Literal Editable="false">
+          <ID>classname</ID>
+          <ToolTip>Class name</ToolTip>
+          <Default>ClassNamePlaceholder</Default>
+          <Function>ClassName()</Function>
+				</Literal>
+   
+			</Declarations>
+      
+			<Code Language="csharp">
+        <![CDATA[
+        
+        public static string FileName="$classname$.Dat";
+        
+        private $classname$()
+        {
+
+        }
+
+         // add data to save here
+          
+
+        #region Singleton From File Pattern
+
+        #region Singleton
+
+        private static $classname$ instance = null;
+        private static object syncLock = new object();
+        public static $classname$ Instance
+        {
+            get
+            {
+                if (instance == null)
+                    lock (syncLock)
+                    {
+                        if (instance == null)
+                        {
+                            instance = FromFile();
+                            instance.SaveToFile();
+                        }
+                    }
+                return instance;
+            }
+        }
+
+        #endregion
+
+        public void SaveToFile()
+        {
+            global::System.IO.Stream stream = null;
+            try
+            {
+                stream = global::System.IO.File.Create(FileName);
+                global::System.Runtime.Serialization.Formatters.Binary.BinaryFormatter bf = new global::System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                bf.Serialize(stream, this);
+                stream.Close();
+            }
+            catch (Exception e)
+            {
+                stream.Close();
+                System.Windows.Forms.MessageBox.Show(e.Message,"Error",System.Windows.Forms.MessageBoxButtons.OK,System.Windows.Forms.MessageBoxIcon.Error);
+            }
+        }
+
+        public static $classname$ FromFile()
+        {
+            global::System.IO.Stream s = null;
+                try
+                {
+                    s = global::System.IO.File.Open(FileName, global::System.IO.FileMode.Open);
+                    global::System.Runtime.Serialization.Formatters.Binary.BinaryFormatter bf = new global::System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                    save tem = ($classname$)bf.Deserialize(s);
+                    s.Close();
+                    return tem;
+                }
+                catch (Exception e2)
+                {
+                    s.Close();
+                    global::System.Windows.Forms.MessageBox.Show(e2.Message + Environment.NewLine + "Create New !");
+                    return new save();
+                }
+        }
+
+        #endregion]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
