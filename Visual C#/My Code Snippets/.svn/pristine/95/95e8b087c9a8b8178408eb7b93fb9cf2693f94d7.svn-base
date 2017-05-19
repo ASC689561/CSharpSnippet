@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>watch</Title>
+			<Shortcut>watch</Shortcut>
+			<Description>watch</Description>
+			<Author>NBH</Author>
+			<SnippetTypes>
+        
+				<SnippetType>Expansion</SnippetType>
+    				<SnippetType>SurroundsWith</SnippetType>    
+			</SnippetTypes>
+		</Header>
+    
+		<Snippet>
+    <Declarations>
+      <Literal Editable="false">
+        <ID>classname</ID>
+        <ToolTip>Class name</ToolTip>
+        <Function>ClassName()</Function>
+        <Default>ClassNamePlaceholder</Default>
+      </Literal>
+
+      <Literal >
+        <ID>thamso</ID>
+        <ToolTip>kiểu lỗi</ToolTip>
+        <Default>Error</Default>
+      </Literal>
+      <Literal >
+        <ID>method</ID>
+        <ToolTip>hàm chứa đoạn code cần đo thời gian</ToolTip>
+        <Default></Default>
+      </Literal>
+    </Declarations>
+			<Code Language="csharp">
+        <![CDATA[Stopwatch Clock = new Stopwatch();
+            Clock.Restart();
+            
+            $selected$$end$
+            
+            Console.WriteLine("$classname$.$method$() Excuted in: "+Clock.ElapsedMilliseconds.ToString());
+            global::System.Windows.Forms.MessageBox.Show("$classname$.$method$() Excuted in: "+Clock.ElapsedMilliseconds.ToString());
+            ]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

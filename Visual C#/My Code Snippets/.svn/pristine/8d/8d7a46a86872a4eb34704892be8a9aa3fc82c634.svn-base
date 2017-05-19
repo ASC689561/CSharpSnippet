@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>for for</Title>
+			<Shortcut>forf</Shortcut>
+			<Description>for for</Description>
+			<Author>NBH</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+        
+				<Literal>
+					<ID>index1</ID>
+					<ToolTip>index 1</ToolTip>
+					<Default>i</Default>
+				</Literal>
+        
+				<Literal>
+					<ID>index2</ID>
+					<ToolTip>index 2</ToolTip>
+					<Default>j</Default>
+				</Literal>
+        
+				<Literal>
+					<ID>length1</ID>
+					<ToolTip>length 1</ToolTip>
+					<Default>length1</Default>
+				</Literal>          
+        
+				<Literal>
+					<ID>length2</ID>
+					<ToolTip>length 2</ToolTip>
+					<Default>length2</Default>
+				</Literal>          
+        
+        
+        
+			</Declarations>
+			<Code Language="csharp">
+        <![CDATA[for (var $index1$ = 0; $index1$ < $length1$; $index1$++)
+                for (int $index2$ = 0; $index2$ < $length2$; $index2$++)
+                {
+                   $selected$  $end$
+                }
+     ]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

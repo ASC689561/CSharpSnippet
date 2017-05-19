@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>event</Title>
+			<Shortcut>event</Shortcut>
+			<Description>tao delegate va event</Description>
+			<Author>NBH</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+        
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>Tên envent</ToolTip>
+					<Default>Name</Default>
+				</Literal>
+
+        <Literal>
+          <ID>thamso</ID>
+          <ToolTip>Tham so</ToolTip>
+          <Default> </Default>
+        </Literal>
+			</Declarations>
+			<Code Language="csharp"><![CDATA[public delegate void $name$Hander($thamso$);
+        public event $name$Hander $name$;
+     ]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

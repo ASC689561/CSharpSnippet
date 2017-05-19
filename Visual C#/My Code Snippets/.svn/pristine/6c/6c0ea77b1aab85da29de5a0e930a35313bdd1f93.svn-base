@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>pro</Title>
+			<Shortcut>pro</Shortcut>
+			<Description>thủ Tục Thuộc Tính</Description>
+      <Author>NBH</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+        
+ 				<Literal Editable="true">
+					<ID>des</ID>
+					<ToolTip>mo ta</ToolTip>
+          <Default> </Default>
+				</Literal>    
+        
+				<Literal Editable="true">
+					<ID>type</ID>
+					<ToolTip>kiểu</ToolTip>
+          <Default>type</Default>
+				</Literal>
+ 				<Literal Editable="true">
+					<ID>property</ID>
+					<ToolTip>property</ToolTip>
+          <Default>property</Default>
+				</Literal>       
+			</Declarations>
+			<Code Language="csharp">
+        <![CDATA[$type$ _$property$;
+      $end$ 
+      
+      
+      /// <summary>
+      /// $des$
+      /// </summary>  
+      public $type$ $property$
+      {
+        get { return _$property$;}
+        set {_$property$=value; }
+      }]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

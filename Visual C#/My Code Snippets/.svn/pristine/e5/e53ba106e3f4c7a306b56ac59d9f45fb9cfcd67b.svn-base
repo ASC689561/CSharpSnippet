@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>method</Title>
+			<Shortcut>method</Shortcut>
+			<Description>tao phuong thuc</Description>
+			<Author>NBH</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+        
+				<Literal>
+					<ID>modify</ID>
+					<ToolTip>kiểu bảo vệ</ToolTip>
+					<Default>public</Default>
+				</Literal>     
+        
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>Tên Struct</ToolTip>
+					<Default>method</Default>
+				</Literal>
+        
+				<Literal>
+					<ID>type</ID>
+					<ToolTip>kieu tra ve</ToolTip>
+					<Default>void</Default>
+				</Literal>      
+        
+ 				<Literal>
+					<ID>param</ID>
+					<ToolTip>Tên tham so</ToolTip>
+					<Default> </Default>
+				</Literal>       
+			</Declarations>
+			<Code Language="csharp">
+        <![CDATA[$modify$ $type$ $name$($param$)
+	    {
+		        $selected$$end$
+	    }]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

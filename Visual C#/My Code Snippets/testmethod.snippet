@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Test Method</Title>
+      <Shortcut>tem</Shortcut>
+      <Description>Code snippet for a test method</Description>
+      <Author>Microsoft Corporation</Author>
+    </Header>
+    <Snippet>
+       
+      <Declarations>
+        <Literal Editable="false">
+          <ID>classname</ID>
+          <ToolTip>Class name</ToolTip>
+          <Function>ClassName()</Function>
+          <Default>ClassNamePlaceholder</Default>
+        </Literal>
+
+        <Literal>
+          <ID>method</ID>
+          <ToolTip>name of method</ToolTip>
+          <Default></Default>
+        </Literal>
+  
+        
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[[Test]
+        public void $method$()
+        {
+            $end$
+        }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
